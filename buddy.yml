@@ -1,0 +1,16 @@
+- pipeline: "dupa"
+  trigger_mode: "MANUAL"
+  ref_name: "master"
+  ref_type: "BRANCH"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  trigger_condition: "ALWAYS"
+  actions:
+  - action: "Archive directory"
+    type: "ZIP"
+    destination: "dupa.zip"
+    trigger_condition: "ALWAYS"
+  - action: "Make GitHub Release"
+    type: "GIT_HUB_RELEASE"
+    trigger_condition: "ALWAYS"
+    tag_name: "tag-$BUDDY_EXECUTION_ID"
