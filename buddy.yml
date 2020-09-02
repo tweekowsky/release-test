@@ -12,6 +12,6 @@
     trigger_condition: "ALWAYS"
   - action: "Make GitHub Release"
     type: "GIT_HUB_RELEASE"
-    source_path: "dupa.zip"
+    source_path: "dupa"
     trigger_condition: "ALWAYS"
     tag_name: "tag-$BUDDY_EXECUTION_ID"
